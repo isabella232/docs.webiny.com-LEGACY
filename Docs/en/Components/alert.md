@@ -1,6 +1,6 @@
 # Alert
 
-![](Images/Components/Alert/Screen Shot 2016-05-16 at 22.05.48.png)
+![](/Images/Components/Alert/Screen Shot 2016-05-16 at 22.05.48.png)
 
 ## Implementation
 To create a new `Alert` component intialize the component via `Ui.Alert`.
