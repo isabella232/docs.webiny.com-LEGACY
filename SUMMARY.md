@@ -5,6 +5,6 @@
    * About
    * Installation
 * Components
-   * [Alert](Docs/en/Components/alert.md/alertmd.md)
+   * [Alert](Docs/en/Components/alert.md)
 * Tutorials
 
