@@ -3,4 +3,5 @@
 * [Introduction](README.md)
 * Guides
 * Components
+* Tutorials
 
