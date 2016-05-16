@@ -2,8 +2,8 @@
 
 * [Introduction](README.md)
 * Guides
+   * Installation
    * About
-* Installation
 * Components
    * Alert
 * Tutorials
