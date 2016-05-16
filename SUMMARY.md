@@ -3,7 +3,7 @@
 * [Introduction](README.md)
 * Guides
    * About
-   * Installation
+* Installation
 * Components
    * Alert
 * Tutorials
