@@ -2,5 +2,9 @@
     "plugins": [
         "language-picker"
     ],
-    "pluginsConfig": {}
+    "pluginsConfig": {
+        "language-picker": {
+            "grid-columns": "3"
+        }
+    }
 }
