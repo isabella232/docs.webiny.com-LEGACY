@@ -13,7 +13,7 @@ You successfully read this important alert message.
 
 ### Parameters
 | Name | Description | Type | Default |
-| - | - | - | - |
+| --- | --- | --- | --- |
 | title | Alert title - the bit shown in bold | string |  |
 | type | Can be `success`, `info`, `warning` or `error`  | string | `info` |
 | icon | By default it matches the `type` value  | string | `info` |
