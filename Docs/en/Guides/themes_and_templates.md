@@ -137,6 +137,7 @@ The keys that you can define when describing a `template` or a `layout` are:
 ```
 
 
+#### Page JSON object
 
 And here is a sample how the page output looks like:
 
