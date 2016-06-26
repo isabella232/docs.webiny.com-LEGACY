@@ -137,7 +137,9 @@ The keys that you can define when describing a `template` or a `layout` are:
 ```
 
 #### Creating a Theme
-There are two ways of creating a theme. You can either use the user interface inside the Webiny CMS module to first create your theme, and theme the assosciated layouts and templates. 
+There are two ways of creating a theme. You can either use the user interface inside the Webiny CMS module to first create your theme, and then the associated layouts and templates. 
+
+[todo: screenshot of the theme module]
 
 An alternative approach is to write down the theme definition via your favorite text editor, and then import that into Webiny CMS. When doing an import, the system will automatically create the `theme`, `layouts` and `templates` for you.
 
