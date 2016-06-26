@@ -9,6 +9,7 @@ This approach gives you the ability to display the same content on many devices 
 
 ## Theme structure
 Theme is a simple JSON object. Theme doesn't contain any files, nor any assets. A theme has 3 layers:
+
 1. **Theme** - tells basic information about the theme name, author and the version.
 2. **Layout** - a theme can have multiple layouts. Layouts extract common elements usually presented in two or more templates. This way you don't need to define those elements in your templates.
 3. **Template** - A template extends a layout, and defines additional elements. Layouts and templates have the same definition syntax.
