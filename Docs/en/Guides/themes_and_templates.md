@@ -136,63 +136,11 @@ The keys that you can define when describing a `template` or a `layout` are:
 }
 ```
 
-#### Creating a Theme
-There are two ways of creating a theme. You can either use the user interface inside the Webiny CMS module to first create your theme, and then the associated layouts and templates. 
+### Creating a Theme
+There are two ways of creating a theme. You can either use the user interface inside the Webiny CMS module. The UI enables you to create your theme, and the associated layouts and templates. 
 
 [todo: screenshot of the theme module]
 
-An alternative approach is to write down the theme definition via your favorite text editor, and then import that into Webiny CMS. When doing an import, the system will automatically create the `theme`, `layouts` and `templates` for you.
+Alternative approach is to write down the theme definition via your favorite text editor. This you can then import into Webiny CMS. When doing an import, the system will automatically create the `theme`, `layouts` and `templates` for you.
 
-#### Page JSON Object
-
-And here is a sample how the page output looks like:
-
-```json
-{
-  "page": {
-    "title": "page title",
-    "author": "John D",
-    "template": "blog-post.tpl",
-    "content": {
-      "zone-sidebar": [
-        {
-          "grid": "25-50-25",
-          "items": [
-            {
-              "type": "wysiwyg",
-              "content": "<html>",
-              "meta":[]
-            },
-            {
-              "type": "image_single",
-              "src": "http://s3..."
-            },
-            {
-              "type": "image_gallery",
-              "images": [
-                "http://img",
-                "http://img2"
-              ]
-            }
-          ]
-        },
-        {
-          "grid": "100",
-          "items": [
-            {
-              "type": "wysiwyg",
-              "content": "<html>"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  "menu": {
-    "main-menu": "<html>",
-    "footer-menu": "<html>"
-  }
-}
-```
-
-[Click here to learn more about the page API and the output options.](./page_api.md)
+## Rendering content
