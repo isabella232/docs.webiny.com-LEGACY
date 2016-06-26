@@ -141,6 +141,6 @@ There are two ways of creating a theme. You can either use the user interface in
 
 [todo: screenshot of the theme module]
 
-Alternative approach is to write down the theme definition via your favorite text editor. This you can then import into Webiny CMS. When doing an import, the system will automatically create the `theme`, `layouts` and `templates` for you.
+Alternative approach is to write down the theme definition via your favorite text editor. This you can then import into Webiny CMS. When doing an import, the system will automatically create the `theme`, `layouts` and `templates` for you based on your definition.
 
 ## Rendering content
