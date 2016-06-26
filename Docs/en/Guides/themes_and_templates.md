@@ -62,7 +62,7 @@ The second goal is to define zones. **Zones** are a high-level content group. A 
         "central-content",
         "right-sidebar"
       ],
-      "modues": [
+      "modules": [
         {
           "module": "menu",
           "options": {
@@ -81,7 +81,8 @@ The second goal is to define zones. **Zones** are a high-level content group. A 
 A the top we start off with a theme definition:
 
 ```json
- "name": "Foo bar theme",
+{
+  "name": "Foo bar theme",
   "author": {
     "name": "Webiny",
     "email": "info@webiny.com",
@@ -89,6 +90,7 @@ A the top we start off with a theme definition:
   },
   "description": "This is a test theme",
   "version": "0.1.0"
+}
 ```
 This part describes the theme, author and provides some theme versioning info.
 
@@ -101,10 +103,39 @@ The keys that you can define when describing a `template` or a `layout` are:
 * **name** - name of the `template` or a `layout`.
 * **filename** - this is an optional key that you can define. This key will be passed to all the page JSON objects using this template.
 * **description** - few words to describe your `template` or `layout`.
+* **layout** - this is a property defined on a `template` only. It indicates which `layout` the `template` extends.
 * **zones** - this can be defined on both a `template` or a `layout`. If defined on both, the result will be a merged lists of both zones.
 * **modules** - list of modules that need to be loaded when using this template. To each module you can pass a set of `options`. For example on a master layout you might have a text describing "About us" that's displayed somewhere on the page. To load that text you can define the `page` module and pass the "/about-us/" as a url pattern. This will load that page and append that content into your page JSON object. [todo: define a list of apps] [Checkout the list of apps to know which options are available.]() Similar to `zones`, `modules` are also merged between the `latout` and `template`.
-* **layout** - this is a property defined on a `template` only. It indicates which `layout` the `template` extends.
 * **meta** - an optional parameter defining a list of parameters that should be attached to every page JSON object using this `template` or `layout`.
+
+```json
+{
+  "name": "Blog post",
+  "filename": "blog-post.tpl",
+  "description": "Used for displaying blog posts.",
+  "layout": "Master",
+  "zones": [
+    "left-sidebar",
+    "central-content",
+    "right-sidebar"
+  ],
+  "modules": [
+    {
+      "module": "menu",
+      "options": {
+        "name": "blog-post-sidebar"
+      }
+    }
+  ],
+  "meta": {
+    "key": "value",
+    "key2": {
+      "some object": "value"
+    }
+  }
+}
+```
+
 
 
 And here is a sample how the page output looks like:
