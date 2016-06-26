@@ -4,19 +4,19 @@ Webiny is a [headless Content Management System](./about.md), meaning it doesn't
 
 [todo: image illustrating a theme, which is outside the webiny system, theme definition, which is on the border between the theme and the webiny system and the actual CMS which talks via the theme definition to the actual theme]
 
-This approach gives you the ability to display the same content on many devices and screen sizes. For example you can display the content on a NodeJS powered website, smart watch or a SmartTV. The options are endless as the date returned from the CMS is a simple JSON object. 
+This approach gives you the ability to display the same content on many devices and screen sizes. For example you can display the content on a NodeJS powered website, smart watch or a SmartTV. The options are endless as the data returned from the CMS is a simple JSON object. 
 
 
 ## Theme structure
 Theme is a simple JSON object. Theme doesn't contain any files, nor any assets. A theme has 3 layers:
 
-1. **Theme** - tells basic information about the theme name, author and the version.
+1. **Theme** - tells basic information about the theme name, author and its version.
 2. **Layout** - a theme can have multiple layouts. Layouts extract common elements usually presented in two or more templates. This way you don't need to define those elements in your templates.
 3. **Template** - A template extends a layout, and defines additional elements. Layouts and templates have the same definition syntax.
 
-Layouts and templates have two main goals. The first one is to define which **modules** need to load on pages using this template or layout. A typical example would be loading the "menu" module and passing the name of the menu you wish to load, i.e. main menu. This way you will get the main menu items in your page JSON output. 
+Layouts and templates have two main goals. The first one is to define which **modules** need to load on pages using this template or layout. A typical example would be loading the "menu" module and passing the name of the menu you wish to load, i.e. main menu. This way you will get the main menu items in your page JSON object. ([click here to learn about the page JSON object](./page_api.md)) 
 
-The second goal is to define zones. **Zones** are a high-level content group. A simple example would be, say you have a website template with a main content area and left sidebar area. Basically those are zones. When creating your page, you can define in which zone should a certain page element be placed. 
+The second goal is to define zones. **Zones** are a high-level content group. A simple example would be, say you have a website template with a main content area and left sidebar area. Basically those are two zones. When creating your page, you can define in which zone should a certain page element be placed. 
 
 [todo: image ilustrating the theme structure from theme, layouts templates to placeholders]
 
@@ -56,7 +56,7 @@ The second goal is to define zones. **Zones** are a high-level content group. A 
       "name": "Blog post",
       "filename": "blog-post.tpl",
       "description": "Used for displaying blog posts.",
-      "master": "Master",
+      "layout": "Master",
       "zones": [
         "left-sidebar",
         "central-content",
@@ -74,6 +74,37 @@ The second goal is to define zones. **Zones** are a high-level content group. A 
   ]
 }
 ```
+
+
+#### Theme
+
+A the top we start off with a theme definition:
+
+```json
+ "name": "Foo bar theme",
+  "author": {
+    "name": "Webiny",
+    "email": "info@webiny.com",
+    "url": "http://www.webiny.com/"
+  },
+  "description": "This is a test theme",
+  "version": "0.1.0"
+```
+This part describes the theme, author and provides some theme versioning info.
+
+#### Layouts and templates
+
+As mentioned `layouts` and `templates` sections use the same definition. The only difference is that a `template` needs to reference a `layout`.
+
+The keys that you can define when describing a `template` or a `layout` are:
+
+* **name** - name of the `template` or a `layout`.
+* **filename** - this is an optional key that you can define. This key will be passed to all the page JSON objects using this template.
+* **description** - few words to describe your `template` or `layout`.
+* **zones** - this can be defined on both a `template` or a `layout`. If defined on both, the result will be a merged lists of both zones.
+* **modules** - 
+
+
 
 And here is a sample how the page output looks like:
 
