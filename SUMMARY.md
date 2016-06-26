@@ -2,7 +2,7 @@
 
 * [Introduction](README.md)
 * Guides
-   * About
+   * [About](Docs/en/Guides/about.md)
    * Installation
    * [Themes and Templates](Docs/en/Guides/themes_and_templates.md)
 * Components
