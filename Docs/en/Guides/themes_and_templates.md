@@ -103,7 +103,7 @@ The keys that you can define when describing a `template` or a `layout` are:
 * **description** - few words to describe your `template` or `layout`.
 * **zones** - this can be defined on both a `template` or a `layout`. If defined on both, the result will be a merged lists of both zones.
 * **modules** - list of modules that need to be loaded when using this template. To each modules you can pass a set of `options`. For example on a master layout you might have a text describing "About us" that's displayed somewhere on the page. To load that text you can define the `page` module and pass the "/about-us/" as a url pattern. This will load that page and append that content into your page JSON object.
-
+[todo: define a list of apps]
 
 
 And here is a sample how the page output looks like:
