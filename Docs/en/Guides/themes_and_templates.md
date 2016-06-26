@@ -21,7 +21,7 @@ The second goal is to define zones. **Zones** are a high-level content group. A 
 
 ###Theme definition sample
 
-```js
+```json
 {
   "name": "Foo bar theme",
   "author": {
@@ -76,7 +76,7 @@ The second goal is to define zones. **Zones** are a high-level content group. A 
 
 And here is a sample how the page output looks like:
 
-```js
+```json
 {
   "page": {
     "title": "page title",
