@@ -3,6 +3,8 @@
 ## Headless CMS
 Traditional systems are tightly coupled with their presentation layer. Many of them use MCV, or similar patterns, to separate the "presentation" layer, aka the theme, from the business logic. This approach still requires the presence of a presentation layer, which is a big limitation in today's multi-device / multi-screen world. 
 
+[todo: image showing the Headless CMS]
+
 Webiny is taking a device agnostic approach. We don't have a presentation layer, rather we return your pages in a JSON format. This enables you to use any device, any template and any development language to control how that data will be presented.
 
 
