@@ -1,7 +1,7 @@
 # About
 
 ## Headless CMS
-Traditional systems are tightly coupled with their presentation layer. Many of them use MCV, or similar patterns, to separate the "presentation" layer, aka the theme, from the business logic. This approach still requires the presence of a presentation layer, which is a big limitation in today's multi-device / multi-screen world. 
+Traditional systems are tightly coupled with their presentation layer. Many of them use MVC, or similar patterns, to separate the "presentation" layer, aka the theme, from the business logic. This approach still requires the presence of a presentation layer, which is a big limitation in today's multi-device / multi-screen world. 
 
 [todo: image showing the Headless CMS]
 
