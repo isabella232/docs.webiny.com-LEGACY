@@ -141,9 +141,9 @@ There are two ways of creating a theme. You can either use the user interface in
 
 [todo: screenshot of the theme module]
 
-Alternative approach is to write down the theme definition via your favorite text editor. This you can then import into Webiny CMS. When doing an import, the system will automatically create the `theme`, `layouts` and `templates` for you based on your definition.
+Alternative approach is to write down the theme definition via your favorite text editor. This you can then import into Webiny CMS. When doing an import, the system will automatically create the `theme`, `layouts` and `templates` based on your definition.
 
 ## Rendering Content
-As mentioned, Webiny is a [headless CMS](./about.md), and it doesn't have a presentation layer. Rendering of the content is up to the developer. Webiny still provides a sample PHP rendering engine. You can follow similar guidelines to create your own, or you can use the provided one.
+As mentioned, Webiny is a [headless CMS](./about.md), and it doesn't have a presentation layer. Rendering of the content is up to the developer. Webiny still provides a [sample PHP rendering engine](). You can follow similar guidelines to create your own, or you can use the provided one.
 
 If you still opt-in to create your own rendering layer, make sure you integrate proper caching options of the Page JSON Object. This will significantly improve the performance. 
