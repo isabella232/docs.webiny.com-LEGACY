@@ -21,7 +21,7 @@ The second goal is to define zones. **Zones** are a high-level content group. A 
 
 ###Theme definition sample
 
-```javascript
+```js
 {
   "name": "Foo bar theme",
   "author": {
@@ -74,4 +74,54 @@ The second goal is to define zones. **Zones** are a high-level content group. A 
 }
 ```
 
+And here is a sample how the page output looks like:
 
+```js
+{
+  "page": {
+    "title": "page title",
+    "author": "John D",
+    "template": "blog-post.tpl",
+    "content": {
+      "zone-sidebar": [
+        {
+          "grid": "25-50-25",
+          "items": [
+            {
+              "type": "wysiwyg",
+              "content": "<html>",
+              "meta":[]
+            },
+            {
+              "type": "image_single",
+              "src": "http://s3..."
+            },
+            {
+              "type": "image_gallery",
+              "images": [
+                "http://img",
+                "http://img2"
+              ]
+            }
+          ]
+        },
+        {
+          "grid": "100",
+          "items": [
+            {
+              "type": "wysiwyg",
+              "content": "<html>"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "menu": {
+    "main-menu": "<html>",
+    "footer-menu": "<html>"
+  }
+}
+```
+
+[Click here to learn more about the page API and the output options.](./page_api.md)
