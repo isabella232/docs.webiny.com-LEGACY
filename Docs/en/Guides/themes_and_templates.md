@@ -19,3 +19,59 @@ The second goal is to define zones. **Zones** are a high-level content group. A 
 
 [todo: image ilustrating the theme structure from theme, layouts templates to placeholders]
 
+###Theme definition sample
+
+```javascript
+{
+  "name": "Foo bar theme",
+  "author": {
+    "name": "Webiny",
+    "email": "info@webiny.com",
+    "url": "http://www.webiny.com/"
+  },
+  "description": "This is a test theme",
+  "version": "0.1.0",
+  "layouts": [
+    {
+      "name": "Master",
+      "modules": [
+        {
+          "module": "menu",
+          "options": {
+            "name": "main-menu"
+          }
+        },
+        {
+          "module": "page",
+          "options": {
+            "url": "/about-us/"
+          }
+        }
+      ]
+    }
+  ],
+  "templates": [
+    {
+      "name": "Blog post",
+      "filename": "blog-post.tpl",
+      "description": "Used for displaying blog posts.",
+      "master": "Master",
+      "zones": [
+        "left-sidebar",
+        "central-content",
+        "right-sidebar"
+      ],
+      "items": [
+        {
+          "module": "menu",
+          "options": {
+            "name": "blog-post-sidebar"
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+
