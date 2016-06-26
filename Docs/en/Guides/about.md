@@ -8,4 +8,4 @@ Webiny is taking a device agnostic approach. We don't have a presentation layer,
 
 ### Theme definition
 Although Webiny doesn't have a presentation layer, it sill gives you the option to describe your presentation layer. This adds structure to the data returned in the JSON output.
-The theme definition is a simple JSON object. [To learn more about Themes and Templates, follow this link](Docs/en/Guides/theme_and_templates.md).
+The theme definition is a simple JSON object. [To learn more about Themes and Templates, follow this link](Docs/en/Guides/themes_and_templates.md).
