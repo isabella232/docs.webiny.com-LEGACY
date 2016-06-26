@@ -7,7 +7,7 @@ Webiny is a [headless Content Management System](./about.md), meaning it doesn't
 This approach gives you the ability to display the same content on many devices and screen sizes. For example you can display the content on a NodeJS powered website, smart watch or a SmartTV. The options are endless as the data returned from the CMS is a simple JSON object. 
 
 
-## Theme structure
+## Theme Structure
 Theme is a simple JSON object. Theme doesn't contain any files, nor any assets. A theme has 3 layers:
 
 1. **Theme** - tells basic information about the theme name, author and its version.
@@ -20,7 +20,7 @@ The second goal is to define zones. **Zones** are a high-level content group. A 
 
 [todo: image ilustrating the theme structure from theme, layouts templates to placeholders]
 
-###Theme definition sample
+###Theme Definition Sample
 
 ```json
 {
@@ -94,7 +94,7 @@ A the top we start off with a theme definition:
 ```
 This part describes the theme, author and provides some theme versioning info.
 
-#### Layouts and templates
+#### Layouts and Templates
 
 As mentioned `layouts` and `templates` sections use the same definition. The only difference is that a `template` needs to reference a `layout`.
 
@@ -136,8 +136,12 @@ The keys that you can define when describing a `template` or a `layout` are:
 }
 ```
 
+#### Creating a Theme
+There are two ways of creating a theme. You can either use the user interface inside the Webiny CMS module to first create your theme, and theme the assosciated layouts and templates. 
 
-#### Page JSON object
+An alternative approach is to write down the theme definition via your favorite text editor, and then import that into Webiny CMS. When doing an import, the system will automatically create the `theme`, `layouts` and `templates` for you.
+
+#### Page JSON Object
 
 And here is a sample how the page output looks like:
 
