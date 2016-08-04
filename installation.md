@@ -14,7 +14,3 @@ This will install a Webiny CLI tool you will use to setup everything else. After
 node webiny
 ```
 
-
-
-
-
