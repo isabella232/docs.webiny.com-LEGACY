@@ -8,5 +8,5 @@
     * [Platform Overview](platform-overview.md)
 * [Components](components.md)
     * [Alert](Docs/en/Components/alert.md)
-* Tutorials
+* [Tutorials](tutorials.md)
 
