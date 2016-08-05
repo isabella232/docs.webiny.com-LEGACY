@@ -1,0 +1,1 @@
+Moved to Docs\en\platform-overview.md
