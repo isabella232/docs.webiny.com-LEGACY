@@ -1,5 +1,6 @@
 # About
 
-Work in progress ...
+Have a look at SUMMARY.md
+
 
 
