@@ -45,11 +45,9 @@ Once the platform config is loaded, the system begins to read apps from \`Apps\`
 
 After all app configs are loaded, the bootstrap process attempts to execute \`Bootstrap.php\` file located in the \`Php\` folder of each loaded app. More on this in [PHP App Bootstrap](/app-bootstrap.md).
 
- After all apps are bootstrapped, the system fires a \`Core.Bootstrap.End\` event without any parameters.
+After all apps are bootstrapped, the system fires a \`Core.Bootstrap.End\` event without any parameters.
 
 ## Request Processing
 
-Once the bootstrap process has finished, it is time to process the request. The platform is built in a way that can be completely customized at each stage of request processing, via event manager. The system fires an event \`Core.Bootstrap.Request\`, essentially saying: \`Hey, I need someone to process the request, and I am expecting the result to be an instance of '\Apps\Core\Php\DevTools\Response\AbstractResponse'\`.
-
-
+Once the bootstrap process has finished, it is time to process the request. The platform is built in a way that can be completely customized at each stage of request processing, via event manager. The system fires an event \`Core.Bootstrap.Request\`, essentially saying: \`Hey, I need someone to process the request, and I am expecting the result to be an instance of '\Apps\Core\Php\DevTools\Response\AbstractResponse'\`. If a valid result is received, it will be sent to the browser. If not, a 404 response will be sent.
 
