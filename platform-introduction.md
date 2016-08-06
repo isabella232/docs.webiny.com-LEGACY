@@ -1,4 +1,4 @@
-## Platform introduction
+## Introduction
 
 How many times did you start your project from scratch, spent a few days setting up the basics, just to get your first output from your upcoming API? And what about your user interface? Backend app, frontend app \(or even a couple of them\), setting up authorization layer, password recovery, buid system, development\/production versions, deployment to remote server...
 
