@@ -43,7 +43,7 @@ When a request arrives to **public\_html\/index.php**, the internal bootstrap pr
 
 Once the platform config is loaded, the system begins to read apps from **Apps** folder and parse their **App.yaml** files.
 
-After all app configs are loaded, the bootstrap process attempts to execute **Bootstrap.php** file located in the **Php** folder of each loaded app. More on this in [PHP App Bootstrap](/app-bootstrap.md).
+After all app configs are loaded, the bootstrap process attempts to execute **Bootstrap.php** file located in the **Php** folder of each loaded app. More on this in [App Bootstrap](/app-bootstrap.md).
 
 After all apps are bootstrapped, the system fires a **Core.Bootstrap.End** event without any parameters.
 
@@ -56,6 +56,9 @@ The system provides 3 bult-in request handlers:
 * **API** - checks if the request is an API request \(by checking the config **ApiPath**\) and if yes, starts its own logic for request processing. This event handler has a priority of **400.**
 
 * **Routes** - checks if the request matches any of the static routes defined through [Webiny\/Router](https://github.com/Webiny/Router) component. This event handler has a priority of **390.**
+
 * **Backend** - checks if request matches the prefix defined in **Application.yaml **for backend area and renders backend app. This event handler has a priority of **380.**
 
-You can register your own handlers via your app's **App.yaml** or using **DevToolsTrait **from PHP**.**
+
+You can register your own handlers via your app's **App.yaml** or using [DevToolsTrait](/devtoolstrait.md)** **from PHP**.**
+

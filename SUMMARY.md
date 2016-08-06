@@ -8,9 +8,9 @@
     * [Development](development.md)
         * [Introduction](platform-introduction.md)
         * [Getting started](getting-started.md)
-        * PHP
+        * [PHP](php.md)
             * [App bootstrap](app-bootstrap.md)
-        * [DevToolsTrait](devtoolstrait.md)
+            * [DevToolsTrait](devtoolstrait.md)
 * [Components](components.md)
     * [Alert](Docs/en/Components/alert.md)
 
