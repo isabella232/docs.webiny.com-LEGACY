@@ -24,5 +24,9 @@ The moment you need to deal with UI you will need to dive into Javascript. Our J
 
 Most of the time you will be writing plain JSX, composing your views of 50+ built-in components, but whenever you need your own component you are free to create it in your app.
 
-A big advantage of our JS layer is the ability to customize built-in component renderers so you can change the looks and behavior of any built-in component by simply passing a new renderer to default component props. Even if you are using a 3rd party app somebody else has created - it will use the renderers you have overriden making it look the way you want it.
+A big advantage of our JS layer is the ability to customize built-in component renderers so you can change the looks and behavior of any built-in component by simply passing a new renderer to default component props. Even if you are using a 3rd party app somebody else has created - it will use the renderers you have overridden making it look the way you want it.
+
+
+
+
 
