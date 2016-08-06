@@ -7,7 +7,7 @@
     * [Themes and Templates](Docs/en/Guides/themes_and_templates.md)
     * [Development](development.md)
         * [Introduction](platform-introduction.md)
-        * [Getting started](getting-started.md)
+        * [Project structure](getting-started.md)
         * [PHP](php.md)
             * [App bootstrap](app-bootstrap.md)
             * [DevToolsTrait](devtoolstrait.md)
