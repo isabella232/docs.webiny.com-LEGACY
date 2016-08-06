@@ -1,5 +1,6 @@
 {
     "plugins": [
-        "richquotes"
+        "richquotes",
+        "mermaid"
     ]
 }
