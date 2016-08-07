@@ -4,7 +4,6 @@
 
 * Create a **MyApp** folder in the Apps folder and create the following file structure:
 
-      .
       |-- Js
       |   `-- Frontend
       |       |-- Modules
@@ -126,17 +125,16 @@
 Ok, now that we have the skeleton for our new app, we need to add a couple more things to get some output.
 
 * We need to create our layout, a UI structure, that will be rendered when the app is run. To achieve this, we simply define a new module called **Layout **\(you can name it whatever you like\):
-
-
-*     .
       `-- Frontend
           |-- Modules
+          |   |-- Dashboard
+          |   |   `-- Module.js
           |   `-- Layout
           |       |-- Main.jsx
           |       `-- Module.js
           `-- App.js
 
-  Paste the following code into **Module.js**:
+* Paste the following code into **Module.js**:
 
 * ```
   import Webiny from 'Webiny';
@@ -179,8 +177,6 @@ Ok, now that we have the skeleton for our new app, we need to add a couple more 
 
 * Ok, now we have our main layout, but we still haven't created our first route and the actual content to render when somebody runs our app. Let's create a **Dashboard** module. Now our folder structure look like this:
 
-
-*     .
       `-- Frontend
           |-- Modules
           |   |-- Dashboard
