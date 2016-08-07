@@ -13,4 +13,6 @@
             * [WebinyTrait](devtoolstrait.md)
 * [Components](components.md)
     * [Alert](Docs/en/Components/alert.md)
+* Tutorials
+    * [Creating a frontend app](create-a-frontend-app.md)
 
