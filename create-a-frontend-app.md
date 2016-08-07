@@ -4,8 +4,8 @@
 
 Create a **MyApp** folder in the Apps folder and create the following file structure:
 
-
 In **App.yaml**, enter the following info:
+
 ```
 Name: MyApp
 Version: 0.1.0
@@ -42,6 +42,7 @@ class Bootstrap
 ```
 
 In **MyApp.tpl**, paste the following code to bootstrap your app \(change the **baseUrl** to match your app route\):
+
 ```
 <!DOCTYPE html>
 <html lang="en">
@@ -91,6 +92,7 @@ In **MyApp.tpl**, paste the following code to bootstrap your app \(change the **
 ```
 
 Paste the following code into your App.js file:
+
 ```
 import Webiny from 'Webiny';
 
@@ -111,12 +113,14 @@ Apps:
 Ok, now that we have the skeleton for our new app, we need to add a couple more things to get some output.
 
 We need to create our layout, a UI structure, that will be rendered when the app is run. To achieve this, we simply define a new module called **Layout **\(you can name it whatever you like\):
-    `-- Frontend
-        |-- Modules
-        |   `-- Layout
-        |       |-- Main.jsx
-        |       `-- Module.js
-        `-- App.js
+```
+`-- Frontend
+    |-- Modules
+    |   `-- Layout
+    |       |-- Main.jsx
+    |       `-- Module.js
+    `-- App.js
+```
 
 Paste the following code into **Module.js**:
 
@@ -132,11 +136,11 @@ Paste the following code into **Module.js**:
   }
 
   export default Module;
-  ```
+```
 
-  This tells the system that whenever a route is rendered, **MasterLayout** placeholder should render the **Main** component. **MasterLayout** is a built-in placeholder which serves as an entry point for rendering.
+This tells the system that whenever a route is rendered, **MasterLayout** placeholder should render the **Main** component. **MasterLayout** is a built-in placeholder which serves as an entry point for rendering.
 
-  Now, we will create our layout, paste the following code into **Main.jsx**:
+Now, we will create our layout, paste the following code into **Main.jsx**:
 
 ```
   import Webiny from 'Webiny';
@@ -157,22 +161,20 @@ Paste the following code into **Module.js**:
   }
 
   export default Main;
-  ```
+```
 
 Ok, now we have our main layout, but we still haven't created our first route and the actual content to render when somebody runs our app. Let's create a **Dashboard** module. Now our folder structure look like this:
 
-```
-`-- Frontend
-    |-- Modules
-    |   |-- Dashboard
-    |   |   `-- Module.js
-    |   `-- Layout
-    |       |-- Main.jsx
-    |       `-- Module.js
-    `-- App.js
-```
+    `-- Frontend
+        |-- Modules
+        |   |-- Dashboard
+        |   |   `-- Module.js
+        |   `-- Layout
+        |       |-- Main.jsx
+        |       `-- Module.js
+        `-- App.js
 
-  Paste the following code into **Dashboard\/Module.js**:
+Paste the following code into **Dashboard\/Module.js**:
 
 ```
   import Webiny from 'Webiny';
@@ -193,10 +195,9 @@ Ok, now we have our main layout, but we still haven't created our first route an
   }
 
   export default Module;
-  ```
+```
 
-  In the **Module** class we simply registered a route called **Dashboard**, passed a pattern, defined a view component for it, called **DummyView** \(usually you would put it in a separate file, just like Main.jsx, but for the sake of brevity I included it inline\) and gave it a title that will be rendered using the title pattern defined in app config.
+In the **Module** class we simply registered a route called **Dashboard**, passed a pattern, defined a view component for it, called **DummyView** \(usually you would put it in a separate file, just like Main.jsx, but for the sake of brevity I included it inline\) and gave it a title that will be rendered using the title pattern defined in app config.
 
 You can now run your watch, include **Core.Webiny** and **MyApp.Frontend**, and navigate to your development domain. You should see your Dashboard content rendered, and the window title should say "Dashboard \| MyApp"
-
 
