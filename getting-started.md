@@ -27,5 +27,5 @@ Once you finished the installation your project directory structure will look li
     |   `-- index.php        -->    system entry point (web-server should point here) 
     `-- webiny               -->    node cli tool to manage builds, deploys, etc.    
 
-> **NOTE**: Some files and folders were omitted from the file tree as they are of no interest to us at this point.
+> NOTE: Some files and folders were omitted from the file tree as they are of no interest to us at this point.
 

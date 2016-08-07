@@ -1,6 +1,6 @@
 # WebinyTrait
 
-When you want to access system resources, like loaded configs, request, database, storage, router, event manager, etc., you need to use **WebinyTrait**. Below is a stripped out version of this trait to give you an overview of methods available to you when using it:
+When you want to access system resources, like loaded configs, request, database, storage, router, event manager, etc., you need to use **WebinyTrait**. Below is a stripped down version of this trait to give you an overview of methods available to you when using it:
 
 ```php
 trait WebinyTrait

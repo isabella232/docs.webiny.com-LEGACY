@@ -35,7 +35,22 @@ This handler checks if the URL matches the **ApiPath** defined in **Application.
 
 Event listeners must return an instance of **\Apps\Core\Php\DevTools\Response\ApiResponse** or throw **\Apps\Core\Php\RequestHandlers\ApiException** or **\Apps\Core\Php\DevTools\Exceptions\AppException**:
 
-> * use **\Apps\Core\Php\RequestHandlers\ApiException** class when you are throwing from your own API handler and you want to send that exception directly to browser \(e.g. from Entity API methods\). You can also specify an HTTP STATUS code using this exception.
-> 
-> * use **\Apps\Core\Php\DevTools\Exceptions\AppException** when throwing from any other custom code \(this is recommended to use in the code that is not directly related to API layer\).
+* use **\Apps\Core\Php\RequestHandlers\ApiException** class when you are throwing from your own API handler and you want to send that exception directly to browser \(e.g. from Entity API methods\). You can also specify an HTTP STATUS code using this exception.
+
+* use **\Apps\Core\Php\DevTools\Exceptions\AppException** when throwing from any other custom code \(this is recommended to use in the code that is not directly related to API layer\).
+
+
+The system has a couple of built-in listeners:
+
+* **Discover** \(Core.Api.Before\) checks if API discovery was requested and responds with JSON formatted for import in [Postman](https://www.getpostman.com/). Try importing collections from URL in Postman: **http:\/\/{yourapp.com}\/api\/discover\/core**
+
+
+* **ApiAccess** \(Core.Api.Before\) checks if **Api-Token** header is required and present in the request, verifies the token and logs the request or denies access to the API.
+
+* **EntityDispatcher** listener for Core.Api.Request - parses the request to determine if it's an entity request and handles it accordingly \(either by triggering CRUD operation or a custom API method exposed in the entity class\).
+* **ServiceDispatcher** listener for Core.Api.Request - parses the request to determine if it's a service request and executes a service method.
+
+Just as with request processing, API processing can be modified by registering new event listeners with higher priority, completely bypassing the built-in listeners or simply adding new listeners on top of the existing ones.
+
+
 

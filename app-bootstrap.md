@@ -19,7 +19,7 @@ class Bootstrap
 }
 ```
 
-> **NOTE**: make sure you replace {YourApp} in the namespace with the actual name of your folder
+> NOTE: make sure you replace {YourApp} in the namespace with the actual name of your folder
 
 The **$app** parameter is an instance of your app and exposes some useful methods for accessing your app's version, entities, services, build paths, etc.
 
