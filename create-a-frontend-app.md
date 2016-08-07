@@ -4,7 +4,7 @@
 
 * Create a **MyApp** folder in the Apps folder and create the following file structure:
 
-1.     .
+      .
       |-- Js
       |   `-- Frontend
       |       |-- Modules
@@ -30,7 +30,7 @@
 
 * In **Bootstrap.php**, paste the following code and uncomment the appropriate route definition:
 
-1. ```
+* ```
   <?php
   namespace Apps\MyApp\Php;
 
@@ -39,16 +39,16 @@
 
   class Bootstrap
   {
-      use BootstrapTrait;
+     use BootstrapTrait;
 
-      public function run(App $app)
-      {
-          // Domain root launches the app, but we need to set it to lower priority because of greedy regex
-          // $this->addAppRoute('/^\//', 'MyApp:Templates/MyApp.tpl', 200);
+     public function run(App $app)
+     {
+         // Domain root launches the app, but we need to set it to lower priority because of greedy regex
+         // $this->addAppRoute('/^\//', 'MyApp:Templates/MyApp.tpl', 200);
 
-          // Or set an app prefix, which will not be so greedy, then we don't need priority
-          // $this->addAppRoute('/^\/my-app/', 'MyApp:Templates/MyApp.tpl');
-      }
+         // Or set an app prefix, which will not be so greedy, then we don't need priority
+         // $this->addAppRoute('/^\/my-app/', 'MyApp:Templates/MyApp.tpl');
+     }
   }
   ```
 
@@ -115,9 +115,9 @@
 
 * Enable the app in **Configs\/Production\/Application.yaml** under **Apps** key:
 
-1. ```
+* ```
   Apps:
-      MyApp: true
+     MyApp: true
   ```
 
 
@@ -126,7 +126,9 @@
 Ok, now that we have the skeleton for our new app, we need to add a couple more things to get some output.
 
 * We need to create our layout, a UI structure, that will be rendered when the app is run. To achieve this, we simply define a new module called **Layout **\(you can name it whatever you like\):
-      .
+
+
+*     .
       `-- Frontend
           |-- Modules
           |   `-- Layout
@@ -135,6 +137,7 @@ Ok, now that we have the skeleton for our new app, we need to add a couple more 
           `-- App.js
 
   Paste the following code into **Module.js**:
+
 * ```
   import Webiny from 'Webiny';
   import Main from './Main';
@@ -152,6 +155,7 @@ Ok, now that we have the skeleton for our new app, we need to add a couple more 
   This tells the system that whenever a route is rendered, **MasterLayout** placeholder should render the **Main** component. **MasterLayout** is a built-in placeholder which serves as an entry point for rendering.
 
   Now, we will create our layout, paste the following code into **Main.jsx**:
+
 * ```
   import Webiny from 'Webiny';
   const Ui = Webiny.Ui.Components;
@@ -174,7 +178,9 @@ Ok, now that we have the skeleton for our new app, we need to add a couple more 
   ```
 
 * Ok, now we have our main layout, but we still haven't created our first route and the actual content to render when somebody runs our app. Let's create a **Dashboard** module. Now our folder structure look like this:
-      .
+
+
+*     .
       `-- Frontend
           |-- Modules
           |   |-- Dashboard
@@ -185,6 +191,7 @@ Ok, now that we have the skeleton for our new app, we need to add a couple more 
           `-- App.js
 
   Paste the following code into **Dashboard\/Module.js**:
+
 * ```
   import Webiny from 'Webiny';
 
@@ -209,4 +216,5 @@ Ok, now that we have the skeleton for our new app, we need to add a couple more 
   In the **Module** class we simply registered a route called **Dashboard**, passed a pattern, defined a view component for it, called **DummyView** \(usually you would put it in a separate file, just like Main.jsx, but for the sake of brevity I included it inline\) and gave it a title that will be rendered using the title pattern defined in app config.
 
 * You can now run your watch, include **Core.Webiny** and **MyApp.Frontend**, and navigate to your development domain. You should see your Dashboard content rendered, and the window title should say "Dashboard \| MyApp"
+
 
