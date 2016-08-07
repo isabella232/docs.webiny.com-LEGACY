@@ -113,14 +113,13 @@ Apps:
 Ok, now that we have the skeleton for our new app, we need to add a couple more things to get some output.
 
 We need to create our layout, a UI structure, that will be rendered when the app is run. To achieve this, we simply define a new module called **Layout **\(you can name it whatever you like\):
-```
-`-- Frontend
-    |-- Modules
-    |   `-- Layout
-    |       |-- Main.jsx
-    |       `-- Module.js
-    `-- App.js
-```
+
+    `-- Frontend
+        |-- Modules
+        |   `-- Layout
+        |       |-- Main.jsx
+        |       `-- Module.js
+        `-- App.js
 
 Paste the following code into **Module.js**:
 
@@ -199,5 +198,139 @@ Paste the following code into **Dashboard\/Module.js**:
 
 In the **Module** class we simply registered a route called **Dashboard**, passed a pattern, defined a view component for it, called **DummyView** \(usually you would put it in a separate file, just like Main.jsx, but for the sake of brevity I included it inline\) and gave it a title that will be rendered using the title pattern defined in app config.
 
-You can now run your watch, include **Core.Webiny** and **MyApp.Frontend**, and navigate to your development domain. You should see your Dashboard content rendered, and the window title should say "Dashboard \| MyApp"
+You can now run your watch, include **Core.Webiny** and **MyApp.Frontend**, and navigate to your development domain. You should see your Dashboard content rendered, and the window title should say "Dashboard \| MyApp".
+
+## Setting up authentication
+
+To setup authentication you need to create a module in your app and simply extend a built-in module we provide so you don't need to write all the logic yourself. To see the module we provide, open this file:
+
+```
+Apps/Core/Js/Webiny/Modules/Authentication/Authentication.js
+```
+
+You can use it as is, override single methods to customize token name, user entity source, etc., or create your own module completely from scratch. If you wish to create your own module - please refer to the above class to see how it is attached to Router changes and how the actual authentication is performed.
+
+For our app we will reuse the authentication logic, but customize the login view. Create a new module called **Authentication**. Please note that this is the only module whose name you must not change \(at least so it is for now, we may change it in the future\).
+
+Now our JS app structure looks like this:
+
+    `-- Frontend
+        |-- Modules
+        |   |-- Authentication
+        |   |   |-- Login.jsx
+        |   |   `-- Module.js
+        |   |-- Dashboard
+        |   |   `-- Module.js
+        |   `-- Layout
+        |       |-- Main.jsx
+        |       `-- Module.js
+        `-- App.js
+
+Copy the following code into **Authentication\/Module.js**:
+
+```
+import Webiny from 'Webiny';
+import Login from './Login';
+
+class Authentication extends Webiny.Modules.Authentication {
+
+    init() {
+        this.registerRoutes(
+            new Webiny.Route('Login', '/login', {
+                MasterLayout: Login
+            }, 'Login').skipDefaultComponents(true)
+        );
+    }
+}
+
+export default Authentication;
+```
+
+Here we can see a few interesting things:
+
+First of all - **Webiny.Modules.Authentication** is the built-in module I mentioned above. We simply extend it. Done! 
+Now, the only thing we need to do here is to register a **Login** route \(which is also a built-in name\) and tell the system that we want the **Login** view \(imported at the top of the file\) to be the only thing we want to have rendered. That is why we are telling it to render into a **MasterLayout** placeholder. **skipDefaultComponents** tells the system to ignore all default components registered in the system when rendering this route \(remember the Layout module? We had our Main.jsx registered as a default component - so we need to skip it here\).
+
+
+Almost there...
+
+
+
+The last thing is the **Login.jsx** view itself. There are multiple ways to create this view. We can either extend the built-in view and override the methods we want, return it from our view's **render\(\)** method while overriding the functionality through props, or we could create our own view and handle all the login processing logic ourselves. You are welcome to analyze the view file and try out different ways:
+
+```
+Apps/Core/Js/Webiny/Modules/Authentication/Views/Login.jsx
+```
+
+We will extend a built-in view, **Webiny.Ui.Views.Login** and override the **renderForm** method. Paste the following code into your **Login.jsx**:
+
+```
+import Webiny from 'Webiny';
+const Ui = Webiny.Ui.Components;
+
+class Login extends Webiny.Ui.Views.Login {
+
+    renderForm(model, container) {
+        return (
+            <div className="container">
+                <div className="sign-in-holder">
+                    <Ui.Form.Loader container={container}/>
+
+                    <div className="form-signin">
+                        <h2 className="form-signin-heading"><span></span>Sign in to your Account</h2>
+
+                        <div className="clear"></div>
+                        <Ui.Form.Error container={container}/>
+
+                        <div className="clear"></div>
+                        <Ui.Input name="username" placeholder="Enter email" label="Email address *" validate="required,email"/>
+                        <Ui.Input
+                            type="password"
+                            name="password"
+                            placeholder="Password"
+                            label="Password *"
+                            validate="required,password"/>
+
+                        <div className="form-footer">
+                            <div className="submit-wrapper">
+                                <Ui.Button type="primary" size="large" onClick={this.submit}>
+                                    <span>Submit</span>
+                                    <Ui.Icon icon="icon-next"/>
+                                </Ui.Button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        );
+    }
+}
+
+export default Login;
+```
+
+And that's it! 
+
+One little thing we might want to have in our Layout is the logout button. So let's modify the Main.jsx to look like this:
+
+```
+class Main extends Webiny.Ui.View {
+
+    logout() {
+        Webiny.Dispatcher.dispatch('Logout');
+    }
+
+    render() {
+        return (
+            <div>
+                <h2>Main Header</h2>
+                <Ui.Button type="secondary" onClick={this.logout}>Logout</Ui.Button>
+                <Webiny.Ui.Placeholder name="MasterContent"/>
+            </div>
+        );
+    }
+}
+```
+
+The **logout\(\)** method simply dispatches the **Logout** event, and out Authentication module listens for that event and handles the logout process.
 
