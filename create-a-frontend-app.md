@@ -4,6 +4,17 @@
 
 Create a **MyApp** folder in the Apps folder and create the following file structure:
 
+    .
+    |-- Js
+    |   `-- Frontend
+    |       |-- Modules
+    |       `-- App.js
+    |-- Php
+    |   `-- Bootstrap.php
+    |-- Templates
+    |   `-- MyApp.tpl
+    `-- App.yaml
+
 In **App.yaml**, enter the following info:
 
 ```
@@ -251,10 +262,7 @@ Here we can see a few interesting things:
 First of all - **Webiny.Modules.Authentication** is the built-in module I mentioned above. We simply extend it. Done! 
 Now, the only thing we need to do here is to register a **Login** route \(which is also a built-in name\) and tell the system that we want the **Login** view \(imported at the top of the file\) to be the only thing we want to have rendered. That is why we are telling it to render into a **MasterLayout** placeholder. **skipDefaultComponents** tells the system to ignore all default components registered in the system when rendering this route \(remember the Layout module? We had our Main.jsx registered as a default component - so we need to skip it here\).
 
-
 Almost there...
-
-
 
 The last thing is the **Login.jsx** view itself. There are multiple ways to create this view. We can either extend the built-in view and override the methods we want, return it from our view's **render\(\)** method while overriding the functionality through props, or we could create our own view and handle all the login processing logic ourselves. You are welcome to analyze the view file and try out different ways:
 
@@ -309,7 +317,7 @@ class Login extends Webiny.Ui.Views.Login {
 export default Login;
 ```
 
-And that's it! 
+And that's it!
 
 One little thing we might want to have in our Layout is the logout button. So let's modify the Main.jsx to look like this:
 
