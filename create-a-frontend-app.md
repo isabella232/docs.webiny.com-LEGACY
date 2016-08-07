@@ -125,9 +125,7 @@
 Ok, now that we have the skeleton for our new app, we need to add a couple more things to get some output.
 
 * We need to create our layout, a UI structure, that will be rendered when the app is run. To achieve this, we simply define a new module called **Layout **\(you can name it whatever you like\):
-
-
-      `-- Frontend
+*     `-- Frontend
           |-- Modules
           |   `-- Layout
           |       |-- Main.jsx
