@@ -4,7 +4,9 @@
 
 When a request arrives to **public\_html\/index.php**, the internal bootstrap process is triggered, which first tries to determine the configs that should be loaded. The requested domain is matched against entries in **ConfigSets.yaml** to find the appropriate environment. **Production** configs are always loaded, and if the detected environment is other than that, other config files are loaded and merged into the **Production** configs to override specific configuration parameters.
 
-> NOTE: **Production** and **Development** environments are the only built-in environments. You can create other config sets and name them whatever you like \(e.g. Local, Staging,...\). Simply create a new folder inside **Configs** folder and add your own yaml files.
+**production** and **development** environments are the only built-in environments. Their primary purpose is to define which JS build to load and optionally perform conditional execution logic. There are 2 corresponding config sets: Production and Development. 
+
+> NOTE: You can create other config sets and name them whatever you like \(e.g. Local, Staging,...\). Simply create a new folder inside **Configs** folder and add your own yaml files.
 
 Once the platform config is loaded, the system begins to read apps from **Apps** folder and parse their **App.yaml** files.
 
@@ -25,5 +27,7 @@ The system provides 3 bult-in request handlers:
 * **Backend** - checks if request matches the prefix defined in **Application.yaml **for backend area and renders backend app. This event handler has a priority of **380.**
 
 
-You can register your own handlers via your app's **App.yaml** or using [DevToolsTrait](/devtoolstrait.md)** **from PHP**.**
+You can register your own handlers via your app's **App.yaml** or using [WebinyTrait](/devtoolstrait.md)** **from PHP**.**
+
+### API Request Handler
 

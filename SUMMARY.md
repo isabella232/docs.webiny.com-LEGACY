@@ -10,7 +10,7 @@
         * [Project structure](getting-started.md)
         * [PHP](php.md)
             * [App bootstrap](app-bootstrap.md)
-            * [DevToolsTrait](devtoolstrait.md)
+            * [WebinyTrait](devtoolstrait.md)
 * [Components](components.md)
     * [Alert](Docs/en/Components/alert.md)
 
