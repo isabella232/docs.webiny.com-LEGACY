@@ -4,7 +4,7 @@
 
 When a request arrives to **public\_html\/index.php**, the internal bootstrap process is triggered, which first tries to determine the configs that should be loaded. The requested domain is matched against entries in **ConfigSets.yaml** to find the appropriate environment. **Production** configs are always loaded, and if the detected environment is other than that, other config files are loaded and merged into the **Production** configs to override specific configuration parameters.
 
-**production** and **development** environments are the only built-in environments. Their primary purpose is to define which JS build to load and optionally perform conditional execution logic. There are 2 corresponding config sets: Production and Development. 
+**production** and **development** environments are the only built-in environments. Their primary purpose is to define which JS build to load and optionally perform conditional execution logic. There are 2 corresponding config sets: Production and Development.
 
 > NOTE: You can create other config sets and name them whatever you like \(e.g. Local, Staging,...\). Simply create a new folder inside **Configs** folder and add your own yaml files.
 
@@ -30,4 +30,12 @@ The system provides 3 bult-in request handlers:
 You can register your own handlers via your app's **App.yaml** or using [WebinyTrait](/devtoolstrait.md)** **from PHP**.**
 
 ### API Request Handler
+
+This handler checks if the URL matches the **ApiPath** defined in **Application.yaml **and if yes, tries to acquire the response by executing 2 sequential events: **Core.Api.Before** and **Core.Api.Request**.
+
+Event listeners must return an instance of **\Apps\Core\Php\DevTools\Response\ApiResponse** or throw **\Apps\Core\Php\RequestHandlers\ApiException** or **\Apps\Core\Php\DevTools\Exceptions\AppException**:
+
+> * use **\Apps\Core\Php\RequestHandlers\ApiException** class when you are throwing from your own API handler and you want to send that exception directly to browser \(e.g. from Entity API methods\). You can also specify an HTTP STATUS code using this exception.
+> 
+> * use **\Apps\Core\Php\DevTools\Exceptions\AppException** when throwing from any other custom code \(this is recommended to use in the code that is not directly related to API layer\).
 
