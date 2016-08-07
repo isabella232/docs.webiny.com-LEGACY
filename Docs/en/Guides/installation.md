@@ -53,3 +53,17 @@ Now you can run the upper `npm` command from vagrant and install Webiny.
 
 
 > **Info**: Note that our vagrant box by default maps the vagrant `/home/vagrant/Code` folder to the `Code` folder on your local drive. The folder on the local drive is located in the folder where you cloned the `WebinyDevVagrantBox` repo.
+
+{% mermaid %}
+sequenceDiagram
+    participant Alice
+    participant Bob
+    Alice->>John: Hello John, how are you?
+    loop Healthcheck
+        John->>John: Fight against hypochondria
+    end
+    Note right of John: Rational thoughts <br/>prevail...
+    John-->>Alice: Great!
+    John->>Bob: How about you?
+    Bob-->>John: Jolly good!
+{% endmermaid %}
