@@ -4,9 +4,6 @@
 
 Create a **MyApp** folder in the Apps folder and create the following file structure:
 
-```
-
-```
 
 In **App.yaml**, enter the following info:
 ```
@@ -121,9 +118,9 @@ We need to create our layout, a UI structure, that will be rendered when the app
         |       `-- Module.js
         `-- App.js
 
-* Paste the following code into **Module.js**:
+Paste the following code into **Module.js**:
 
-* ```
+```
   import Webiny from 'Webiny';
   import Main from './Main';
 
@@ -141,7 +138,7 @@ We need to create our layout, a UI structure, that will be rendered when the app
 
   Now, we will create our layout, paste the following code into **Main.jsx**:
 
-* ```
+```
   import Webiny from 'Webiny';
   const Ui = Webiny.Ui.Components;
 
@@ -162,20 +159,22 @@ We need to create our layout, a UI structure, that will be rendered when the app
   export default Main;
   ```
 
-* Ok, now we have our main layout, but we still haven't created our first route and the actual content to render when somebody runs our app. Let's create a **Dashboard** module. Now our folder structure look like this:
+Ok, now we have our main layout, but we still haven't created our first route and the actual content to render when somebody runs our app. Let's create a **Dashboard** module. Now our folder structure look like this:
 
-      `-- Frontend
-          |-- Modules
-          |   |-- Dashboard
-          |   |   `-- Module.js
-          |   `-- Layout
-          |       |-- Main.jsx
-          |       `-- Module.js
-          `-- App.js
+```
+`-- Frontend
+    |-- Modules
+    |   |-- Dashboard
+    |   |   `-- Module.js
+    |   `-- Layout
+    |       |-- Main.jsx
+    |       `-- Module.js
+    `-- App.js
+```
 
   Paste the following code into **Dashboard\/Module.js**:
 
-* ```
+```
   import Webiny from 'Webiny';
 
   class DummyView extends Webiny.Ui.View {
@@ -198,6 +197,6 @@ We need to create our layout, a UI structure, that will be rendered when the app
 
   In the **Module** class we simply registered a route called **Dashboard**, passed a pattern, defined a view component for it, called **DummyView** \(usually you would put it in a separate file, just like Main.jsx, but for the sake of brevity I included it inline\) and gave it a title that will be rendered using the title pattern defined in app config.
 
-* You can now run your watch, include **Core.Webiny** and **MyApp.Frontend**, and navigate to your development domain. You should see your Dashboard content rendered, and the window title should say "Dashboard \| MyApp"
+You can now run your watch, include **Core.Webiny** and **MyApp.Frontend**, and navigate to your development domain. You should see your Dashboard content rendered, and the window title should say "Dashboard \| MyApp"
 
 
