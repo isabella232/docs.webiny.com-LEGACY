@@ -2,9 +2,9 @@
 
 ## Setting up the basic app structure
 
-* Create a **MyApp** folder in the Apps folder and create the following file structure:
+Create a **MyApp** folder in the Apps folder and create the following file structure:
 
-      |-- Js
+*     |-- Js
       |   `-- Frontend
       |       |-- Modules
       |       `-- App.js
@@ -125,12 +125,11 @@
 Ok, now that we have the skeleton for our new app, we need to add a couple more things to get some output.
 
 * We need to create our layout, a UI structure, that will be rendered when the app is run. To achieve this, we simply define a new module called **Layout **\(you can name it whatever you like\):
-*     `-- Frontend
-          |-- Modules
-          |   `-- Layout
-          |       |-- Main.jsx
-          |       `-- Module.js
-          `-- App.js
+* `-- Frontend
+      |-- Modules
+      |`-- Layout
+      \|       \|-- Main.jsx
+      \|       `-- Module.js`-- App.js
 
 * Paste the following code into **Module.js**:
 
