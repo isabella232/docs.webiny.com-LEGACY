@@ -17,7 +17,7 @@ Create a **MyApp** folder in the Apps folder and create the following file struc
 
 In **App.yaml**, enter the following info:
 
-```
+```yaml
 Name: MyApp
 Version: 0.1.0
 Link: http://myapp.com
@@ -30,7 +30,7 @@ AuthorEmail: info@webiny.com
 
 In **Bootstrap.php**, paste the following code and uncomment the appropriate route definition:
 
-```
+```php
 <?php
 namespace Apps\MyApp\Php;
 
@@ -54,7 +54,7 @@ class Bootstrap
 
 In **MyApp.tpl**, paste the following code to bootstrap your app \(change the **baseUrl** to match your app route\):
 
-```
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -90,7 +90,7 @@ In **MyApp.tpl**, paste the following code to bootstrap your app \(change the **
 
 **function Webiny\(run\){...}** - is the function that is executed once the **vendors.js** file included by **{webiny}** has finished loading. A callback is passed to it and you need to execute it with an app config as first parameter to start the bootstrap process. The config consists of the following:
 
-```
+```js
 {
     app: 'MyApp.Frontend',            -->    The name of the JS app you want to run
     router: {
@@ -104,7 +104,7 @@ In **MyApp.tpl**, paste the following code to bootstrap your app \(change the **
 
 Paste the following code into your App.js file:
 
-```
+```js
 import Webiny from 'Webiny';
 
 export default new Webiny.App('MyApp.Frontend');
@@ -114,7 +114,7 @@ This simply defines an app and the platform knows what to do with it. There are 
 
 Enable the app in **Configs\/Production\/Application.yaml** under **Apps** key:
 
-```
+```yaml
 Apps:
    MyApp: true
 ```
@@ -134,7 +134,7 @@ We need to create our layout, a UI structure, that will be rendered when the app
 
 Paste the following code into **Module.js**:
 
-```
+```js
   import Webiny from 'Webiny';
   import Main from './Main';
 
@@ -152,7 +152,7 @@ This tells the system that whenever a route is rendered, **MasterLayout** placeh
 
 Now, we will create our layout, paste the following code into **Main.jsx**:
 
-```
+```js
   import Webiny from 'Webiny';
   const Ui = Webiny.Ui.Components;
 
@@ -186,7 +186,7 @@ Ok, now we have our main layout, but we still haven't created our first route an
 
 Paste the following code into **Dashboard\/Module.js**:
 
-```
+```js
   import Webiny from 'Webiny';
 
   class DummyView extends Webiny.Ui.View {
@@ -239,7 +239,7 @@ Now our JS app structure looks like this:
 
 Copy the following code into **Authentication\/Module.js**:
 
-```
+```js
 import Webiny from 'Webiny';
 import Login from './Login';
 
@@ -272,7 +272,7 @@ Apps/Core/Js/Webiny/Modules/Authentication/Views/Login.jsx
 
 We will extend a built-in view, **Webiny.Ui.Views.Login** and override the **renderForm** method. Paste the following code into your **Login.jsx**:
 
-```
+```js
 import Webiny from 'Webiny';
 const Ui = Webiny.Ui.Components;
 
@@ -321,7 +321,7 @@ And that's it!
 
 One little thing we might want to have in our Layout is the logout button. So let's modify the Main.jsx to look like this:
 
-```
+```js
 class Main extends Webiny.Ui.View {
 
     logout() {
