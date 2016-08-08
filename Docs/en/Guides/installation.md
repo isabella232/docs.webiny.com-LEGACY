@@ -7,6 +7,8 @@ Create a project folder anywhere you like, enter the folder and execute the foll
 ```
 npm install webiny
 ```
+> **Info**: Make sure you have `node_modules` folder inside your project folder, otherwise npm will install the `webiny` module inside your home folder. 
+
 
 This will install a Webiny CLI tool you will use to setup everything else. After \`npm\` finishes the installation, run \`webiny\` file that is created in your project and follow the on-screen instructions that will guide you through the setup process of the platform
 
@@ -54,16 +56,3 @@ Now you can run the upper `npm` command from vagrant and install Webiny.
 
 > **Info**: Note that our vagrant box by default maps the vagrant `/home/vagrant/Code` folder to the `Code` folder on your local drive. The folder on the local drive is located in the folder where you cloned the `WebinyDevVagrantBox` repo.
 
-{% mermaid %}
-sequenceDiagram
-    participant Alice
-    participant Bob
-    Alice->>John: Hello John, how are you?
-    loop Healthcheck
-        John->>John: Fight against hypochondria
-    end
-    Note right of John: Rational thoughts <br/>prevail...
-    John-->>Alice: Great!
-    John->>Bob: How about you?
-    Bob-->>John: Jolly good!
-{% endmermaid %}
