@@ -340,5 +340,5 @@ class Main extends Webiny.Ui.View {
 }
 ```
 
-The **logout\(\)** method simply dispatches the **Logout** event, and out Authentication module listens for that event and handles the logout process.
+The **logout\(\)** method simply dispatches the **Logout** event, and our Authentication module listens for that event and handles the logout process.
 
