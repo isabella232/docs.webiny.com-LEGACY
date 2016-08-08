@@ -7,7 +7,7 @@ Create a project folder anywhere you like, enter the folder and execute the foll
 ```
 npm install webiny
 ```
-> **Info**: Make sure you have `node_modules` folder inside your project folder, otherwise npm will install the `webiny` module inside your home folder. It's enough just to create an email folder.
+> **Info**: Make sure you have `node_modules` folder inside your project folder, otherwise npm will install the `webiny` module inside your home folder.
 
 
 This will install a Webiny CLI tool you will use to setup everything else. After \`npm\` finishes the installation, run \`webiny\` file that is created in your project and follow the on-screen instructions that will guide you through the setup process of the platform
