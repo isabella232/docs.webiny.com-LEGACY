@@ -342,3 +342,5 @@ class Main extends Webiny.Ui.View {
 
 The **logout\(\)** method simply dispatches the **Logout** event, and our Authentication module listens for that event and handles the logout process.
 
+And this is it! You have successfully created your first standalone app with authentication. Check out other tutorials to see more of what our platform has to offer.
+
