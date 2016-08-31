@@ -13,7 +13,7 @@
             * [WebinyTrait](devtoolstrait.md)
 * [Components](components.md)
     * [Alert](Docs/en/Components/alert.md)
-    * [Input](input.md)
+    * [Input](Docs/en/Components/input.md)
 * [Tutorials](tutorials.md)
     * [Creating a frontend app](create-a-frontend-app.md)
 
