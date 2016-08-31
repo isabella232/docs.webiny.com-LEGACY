@@ -20,4 +20,3 @@ You successfully read this important alert message.
 | close | Show the close button - the "x" at the right hand side   | boolean | true |
 
 
-
