@@ -2,8 +2,6 @@
 
 ![](/assets/Input.png)
 
-<img src="/assets/Input.png" style="width: 100%"/>
-
 ## Implementation
 
 To create a new `Input` component initialize the component via `Ui.Input`.
